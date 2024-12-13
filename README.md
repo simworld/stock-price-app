@@ -1,70 +1,122 @@
-# Getting Started with Create React App
+# Stock Quote React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a simple React application that fetches and displays stock quote information using the Yahoo Finance API. It allows users to search for stock data by entering a stock ticker symbol (e.g., `AAPL` for Apple).
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Search by Stock Ticker or Company Name:** Enter a stock ticker symbol or company name in the input field to fetch stock information.
+- **Dynamic Data Fetching:** Fetch real-time stock data using the Yahoo Finance API.
+- **Error Handling:** Displays appropriate error messages for invalid input or when the stock data cannot be retrieved.
+- **Responsive Design:** Ensures a user-friendly experience on various devices.
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Frontend:** React (with Hooks for state management)
+- **HTTP Requests:** Axios
+- **API:** [Yahoo Finance API](https://rapidapi.com/yahoo-finance15/api/yahoo-finance15/)
+- **Styling:** CSS
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Prerequisites
 
-### `npm test`
+Before running the project, make sure you have the following installed:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [Node.js](https://nodejs.org/) (v14 or higher)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
 
-### `npm run build`
+## Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Follow the steps below to set up and run the project on your local machine:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 1. Clone the Repository
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+git clone https://github.com/yourusername/stock-quote-app.git
+cd stock-quote-app
+```
 
-### `npm run eject`
+### 2. Install Dependencies
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Install the required dependencies using npm or yarn:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm install
+# or
+yarn install
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 3. Set Up the API Key
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+This app uses the Yahoo Finance API via RapidAPI. To use this app:
 
-## Learn More
+1. Create an account on [RapidAPI](https://rapidapi.com/).
+2. Subscribe to the Yahoo Finance API.
+3. Create a .env file in the root directory of your project and add your RapidAPI key and host:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```javascript
+VITE_RAPIDAPI_KEY = your - rapidapi - key;
+VITE_RAPIDAPI_HOST = yahoo - finance15.p.rapidapi.com;
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Replace your-rapidapi-key with your actual API key from RapidAPI.
 
-### Code Splitting
+### 4. Run the Application
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Start the development server:
 
-### Analyzing the Bundle Size
+```bash
+npm start
+# or
+yarn start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Open your browser and navigate to `http://localhost:3000` to view the app.
 
-### Making a Progressive Web App
+## Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+1. Enter a stock ticker symbol or company name (e.g., `AAPL` for Apple) in the input field.
+2. Click the **Search** button.
+3. View the stock information, including:
+   - Company name and symbol
+   - Last sale price
+   - Net change and percentage change
+   - 52-week range and daily high/low
 
-### Advanced Configuration
+If the stock data cannot be retrieved, an error message will be displayed.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## File Structure
 
-### Deployment
+```
+stock-quote-app/
+├── src/
+│   ├── App.css         # Styling for the app
+│   ├── App.js          # Main component
+│   └── index.js        # Entry point
+├── public/             # Static files
+├── package.json        # Project metadata and dependencies
+└── README.md           # Documentation
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Customization
 
-### `npm run build` fails to minify
+- Add more fields in the `stockQuote` display section as needed.
+- Update styles in `App.css` to match your design preferences.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Known Issues
+
+- The app relies on the API response structure. If the API response changes, adjustments in the code may be necessary.
+- Free tier limits of the Yahoo Finance API on RapidAPI may restrict the number of requests.
+
+## Contributing
+
+Contributions are welcome! Please fork the repository, make your changes, and submit a pull request.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+## Acknowledgments
+
+- [RapidAPI](https://rapidapi.com/) for providing easy access to Yahoo Finance API.
+- [React](https://reactjs.org/) for the amazing frontend library.
+
+---

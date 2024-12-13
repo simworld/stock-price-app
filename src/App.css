@@ -1,38 +1,78 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #e9ecef; /* Light gray background for a softer look */
+  margin: 0;
+  padding: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
 }
 
-.App-link {
-  color: #61dafb;
+.app {
+  background-color: #ffffff; /* White background for the app */
+  padding: 30px;
+  border-radius: 12px; /* More pronounced rounded corners */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Softer shadow */
+  width: 95%; /* Responsive width */
+  max-width: 450px; /* Maximum width for the app */
+  text-align: center; /* Centered text */
+  transition: transform 0.3s; /* Smooth scale on hover */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.app:hover {
+  transform: scale(1.02); /* Slight scale effect on hover */
+}
+
+h1 {
+  color: #343a40; /* Dark gray for header */
+  font-size: 24px; /* Font size for header */
+  margin-bottom: 20px; /* Spacing below header */
+}
+
+input[type="text"] {
+  width: 100%; /* Full width */
+  border: 1px solid #ced4da; /* Light border */
+  border-radius: 6px; /* Rounded corners */
+  margin-bottom: 15px; /* Spacing below input */
+  font-size: 16px; /* Font size */
+  transition: border-color 0.3s; /* Transition for border color */
+}
+
+input[type="text"]:focus {
+  border-color: #007bff; /* Change border color on focus */
+  outline: none; /* Remove default outline */
+}
+
+.app button {
+  background-color: #007bff; /* Bootstrap primary blue */
+  color: #ffffff; /* White text color */
+  border: none; /* No border */
+  padding: 12px 25px; /* Padding for button */
+  border-radius: 6px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor */
+  font-size: 16px; /* Font size */
+  transition: background-color 0.3s, transform 0.2s; /* Transition for hover and press effects */
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+button:active {
+  transform: scale(0.95); /* Slight scale down effect on press */
+}
+
+.error {
+  color: #dc3545; /* Bootstrap danger red for error messages */
+  margin-top: 10px; /* Spacing above error */
+  font-size: 14px; /* Font size for error */
+}
+
+.stock-info {
+  margin-top: 20px; /* Spacing above stock info */
+  text-align: left; /* Align text left for stock info */
+  font-size: 16px; /* Font size for stock info */
+  color: #495057; /* Darker gray for stock info text */
+  line-height: 1.5; /* Better line spacing */
 }
